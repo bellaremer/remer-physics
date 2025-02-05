@@ -1,4 +1,6 @@
-public class forces
+package remer.physics;
+
+public class Forces
 {
     public static void main(String[] args)
     {
@@ -27,6 +29,5 @@ public class forces
 
         System.out.println("The resulting force magnitude is: " + totalMagnitude);
         System.out.println("The resulting force angle is: " + resultAngleDegrees);
-
     }
 }
