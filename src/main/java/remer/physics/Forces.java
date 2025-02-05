@@ -24,7 +24,7 @@ public class Forces
 
         double totalMagnitude = Math.sqrt(forceX * forceX + forceY * forceY);
 
-        double resultAngleRadian = Math.atan2(forceX, forceY);
+        double resultAngleRadian = Math.atan2(forceY, forceX);
         double resultAngleDegrees = Math.toDegrees(resultAngleRadian);
 
         System.out.println("The resulting force magnitude is: " + totalMagnitude);
