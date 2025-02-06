@@ -3,8 +3,8 @@ package remer.physics;
 public class Force
 {
         /*Force
-        degree
-        magnitude
+            degree
+            magnitude
         Force add(Force f)
          */
 

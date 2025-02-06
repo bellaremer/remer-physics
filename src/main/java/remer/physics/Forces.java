@@ -4,7 +4,14 @@ public class Forces
 {
     public static void main(String[] args)
     {
+        Force force1 = new Force(32, 10);
+        Force force2 = new Force(105, 10);
 
+        Force resultForce = force1.add(force2);
+
+        System.out.println("Resultant Force is: ");
+        System.out.println("Degree: " + resultForce.getDegree());
+        System.out.println("Magnitude: " + resultForce.getMagnitude());
 
 
        /* double force1 = 10;
@@ -33,6 +40,9 @@ public class Forces
         System.out.println("The resulting force magnitude is: " + totalMagnitude);
         System.out.println("The resulting force angle is: " + resultAngleDegrees);
         */
+
     }
 
 }
+
+
