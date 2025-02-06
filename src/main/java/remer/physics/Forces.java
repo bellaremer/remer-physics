@@ -4,7 +4,10 @@ public class Forces
 {
     public static void main(String[] args)
     {
-        double force1 = 10;
+
+
+
+       /* double force1 = 10;
         double angle1degrees = 32;
 
         double force2 = 10;
@@ -29,5 +32,7 @@ public class Forces
 
         System.out.println("The resulting force magnitude is: " + totalMagnitude);
         System.out.println("The resulting force angle is: " + resultAngleDegrees);
+        */
     }
+
 }

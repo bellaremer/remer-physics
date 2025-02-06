@@ -20,7 +20,7 @@ public class Force
         public Force add(Force force)
         {
                 double angle1 = Math.toRadians(this.degree);
-                double angle2 = Math.toRadians(this.degree);
+                double angle2 = Math.toRadians(force.degree);
 
                 double x1 = this.magnitude * Math.cos(angle1);
                 double y1 = this.magnitude * Math.sin(angle1);
@@ -31,7 +31,7 @@ public class Force
                 double yResult = y1 + y2;
 
                 double resultMagnitude = Math.sqrt(xResult * xResult + yResult * yResult);
-                double resultDegree = Math.atan2(yResult, xResult);
+                double resultDegree = Math.toDegrees(Math.atan2(yResult, xResult));
 
                 return new Force(resultDegree, resultMagnitude);
         }
