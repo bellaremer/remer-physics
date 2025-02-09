@@ -25,7 +25,7 @@ class ForceTest
         @Test
         public void scale()
         {
-            Force originalForce = new Force(30,15);
+            Force originalForce = new Force(30, 15);
             double scalingFactor = 0.391;
 
             Force scaledForce = originalForce.scale(scalingFactor);
