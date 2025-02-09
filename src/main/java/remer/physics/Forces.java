@@ -12,8 +12,24 @@ public class Forces
         System.out.println("Resultant Force is: ");
         System.out.println("Degree: " + resultForce.getDegree());
         System.out.println("Magnitude: " + resultForce.getMagnitude());
-    }
 
+        double scalingFactor = 0.391;
+        Force scaledForce = force1.scale(scalingFactor);
+
+        System.out.println("Scaled Force is: ");
+        System.out.println("Degree: " + scaledForce.getDegree());
+        System.out.println("Magnitude: " + scaledForce.getMagnitude());
+
+        Location initialLocation = new Location(7, 3);
+        System.out.println("Initial Location: ");
+        System.out.println("X: " + initialLocation.getX());
+        System.out.println("Y: " + initialLocation.getY());
+
+        Location newLocation = initialLocation.apply(scaledForce);
+        System.out.println("New location after applying scaled force: ");
+        System.out.println("X: " + newLocation.getX());
+        System.out.println("Y: " + newLocation.getY());
+    }
 }
 
 

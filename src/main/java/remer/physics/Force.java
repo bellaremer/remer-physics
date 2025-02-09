@@ -6,6 +6,7 @@ public class Force
             degree
             magnitude
         Force add(Force f)
+        Force scale(double t)
          */
 
         private double degree;
@@ -34,6 +35,12 @@ public class Force
                 double resultDegree = Math.toDegrees(Math.atan2(yResult, xResult));
 
                 return new Force(resultDegree, resultMagnitude);
+        }
+
+        public Force scale(double t)
+        {
+                double scaledMagnitude = this.magnitude * t;
+                return new Force(this.degree, scaledMagnitude);
         }
 
         public double getDegree()
