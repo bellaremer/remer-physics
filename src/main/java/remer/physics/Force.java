@@ -2,13 +2,6 @@ package remer.physics;
 
 public class Force
 {
-        /*Force
-            degree
-            magnitude
-        Force add(Force f)
-        Force scale(double t)
-         */
-
         private double degree;
         private double magnitude;
 
