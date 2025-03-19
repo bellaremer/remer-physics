@@ -2,47 +2,51 @@ package remer.physics;
 
 public class Force
 {
-        private double degree;
-        private double magnitude;
+        public static final Force GRAVITY = new Force(0, -9.8);
 
-        public Force(double degree, double magnitude)
+        private double x;
+        private double y;
+
+        public Force(Angle angle, double magnitude)
         {
-            this.degree = degree;
-            this.magnitude = magnitude;
+                x = magnitude * Math.cos(angle.toRadians());
+                y = magnitude * Math.sin(angle.toRadians());
         }
 
-        public Force add(Force force)
+        public Force(double x, double y)
         {
-                double angle1 = Math.toRadians(this.degree);
-                double angle2 = Math.toRadians(force.degree);
-
-                double x1 = this.magnitude * Math.cos(angle1);
-                double y1 = this.magnitude * Math.sin(angle1);
-                double x2 = force.magnitude * Math.cos(angle2);
-                double y2 = force.magnitude * Math.sin(angle2);
-
-                double xResult = x1 + x2;
-                double yResult = y1 + y2;
-
-                double resultMagnitude = Math.sqrt(xResult * xResult + yResult * yResult);
-                double resultDegree = Math.toDegrees(Math.atan2(yResult, xResult));
-
-                return new Force(resultDegree, resultMagnitude);
+                this.x = x;
+                this.y = y;
         }
 
-        public Force scale(double t)
+        public double getAngle()
         {
-                double scaledMagnitude = this.magnitude * t;
-                return new Force(this.degree, scaledMagnitude);
-        }
-
-        public double getDegree()
-        {
-                return degree;
+            return Math.toDegrees(Math.atan2(y, x));
         }
 
         public double getMagnitude()
         {
-                return magnitude;
+            return Math.hypot(x, y);
+        }
+
+        public double getX()
+        {
+                return x;
+        }
+
+        public double getY()
+        {
+                return y;
+        }
+
+        public Force add(Force force)
+        {
+                return new Force(x + force.x, y + force.y);
+        }
+
+        public Force scale(double t)
+        {
+                double scaledMagnitude = this.y * t;
+                return new Force(this.x, scaledMagnitude);
         }
 }

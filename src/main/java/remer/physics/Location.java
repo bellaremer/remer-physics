@@ -11,9 +11,9 @@ public class Location
             this.y = y;
         }
 
-        public Location apply(Force f)
+    public Location move(Force f)
         {
-            double angleRadians = Math.toRadians(f.getDegree());
+            double angleRadians = Math.toRadians(f.getAngle());
 
             double deltaX = f.getMagnitude() * Math.cos(angleRadians);
             double deltaY = f.getMagnitude() * Math.sin(angleRadians);
@@ -21,13 +21,21 @@ public class Location
             return new Location(this.x + deltaX, this.y + deltaY);
         }
 
-        public double getX()
+        public java.lang.Object getX()
         {
             return x;
         }
 
-        public double getY()
+        public java.lang.Object getY()
         {
             return y;
         }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }

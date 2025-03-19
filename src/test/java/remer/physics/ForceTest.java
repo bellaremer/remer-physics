@@ -17,7 +17,7 @@ class ForceTest
             Force c = a.add(b);
 
             // then - check results of test
-            assertEquals(68.5, c.getDegree(), 0.1);
+            assertEquals(68.5, c.getAngle(), 0.1);
             assertEquals(16.08, c.getMagnitude(), 0.1);
 
         }
@@ -30,7 +30,7 @@ class ForceTest
 
             Force scaledForce = originalForce.scale(scalingFactor);
 
-            assertEquals(30, scaledForce.getDegree(), 0.1);
+            assertEquals(30, scaledForce.getAngle(), 0.1);
             assertEquals(5.865, scaledForce.getMagnitude(), 0.1);
         }
 }
